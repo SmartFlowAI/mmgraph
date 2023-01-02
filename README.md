@@ -1,6 +1,6 @@
 # mmgraph
 
-use torchview to visualize the openmmlab model
+use torchview to visualize the openmmlab 2.0 model
 
 400+ mmyolo mmdetection models has been visualized, mmrotate、mmclassification models are coming soon.
 
