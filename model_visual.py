@@ -15,6 +15,9 @@ from mmdet.registry import MODELS
 from mmdet.utils import register_all_modules
 register_all_modules()
 
+from mmyolo.utils import register_all_modules
+register_all_modules()
+
 
 from mmengine.runner import Runner
 
@@ -62,7 +65,7 @@ result_configs = []
 if __name__ == '__main__':
 
     # prefix = 'mmdetection/configs/'
-    prefix = '../mmdetection/configs/'
+    prefix = '../mmyolo/configs/'
 
     algorithms = os.listdir(prefix)
 
@@ -79,13 +82,14 @@ if __name__ == '__main__':
 
     for i, config in enumerate(configs_list):
         print(i, config, configs_list.__len__())
-        config.replace('mmdetection', 'model_visual/mmdetection')
+        
         
         result_dict = dict()
         result_dict['config'] = config
 
         try:
-            draw_model(config, config.replace('mmdetection', 'model_visualization'))
+            # draw_model(config, config.replace('mmyolo', 'model_visual'))
+            draw_model(config, config.replace('mmyolo', 'model_visual/mmyolo'))
             result_dict['result'] = 'PASS'
             print('PASS')
         except Exception as e:
